@@ -7,7 +7,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: "*", // later you can restrict to your frontend domain
+  origin: "*", 
 }));
 app.use(express.json());
 
