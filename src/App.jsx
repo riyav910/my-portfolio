@@ -9,11 +9,14 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-b from-[#0d1d48cc] via-[#020617] to-[#0f172a]/80 text-white">
+        <ScrollToTop />
+
         <Navbar />
 
         <Routes>
