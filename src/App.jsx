@@ -13,19 +13,19 @@ import NotFound from "./pages/NotFound";
 function App() {
   return (
     <Router>
-      <Navbar />
+      <div className="min-h-screen bg-gradient-to-b from-[#0d1d48cc] via-[#020617] to-[#0f172a]/80 text-white">
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
 
-        {/* fallback */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-
-      <Footer />
+        <Footer />
+      </div>
     </Router>
   );
 }

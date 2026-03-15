@@ -11,9 +11,11 @@ const Home = () => {
     <>
       <Hero />
       {/* <Skills />     */}
-      <About/>
-        {/* <HiddenMe /> */}
-        <Highlights />
+      {/* <About/> */}
+      {/* <HiddenMe /> */}
+      <Highlights />
+      {/* Divider */}
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
       <Projects />
       {/* <Contact /> */}
     </>

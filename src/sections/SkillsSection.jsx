@@ -47,7 +47,7 @@ const itemVariants = {
 
 const Skills = () => {
     return (
-        <section className="bg-[#030712] text-white py-24 px-6 min-h-screen">
+        <section className=" py-24 px-6 ">
             <div className="max-w-6xl mx-auto">
 
                 <motion.div

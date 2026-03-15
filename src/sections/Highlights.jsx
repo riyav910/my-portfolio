@@ -43,12 +43,12 @@ const Highlights = () => {
     });
 
     // Move horizontally (adjust -80% based on number of cards)
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
     return (
         <section
             ref={ref}
-            className="relative h-[300vh] bg-[#0f172a] text-white"
+            className="relative h-[220vh] bg-[#0f172a] text-white"
         >
             {/* Progress Bar */}
             <motion.div
@@ -57,7 +57,7 @@ const Highlights = () => {
             />
 
             {/* Sticky Container */}
-            <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+            <div className="sticky top-0 h-screen flex flex-col justify-start pt-48 overflow-hidden">
 
                 {/* Heading */}
                 <div className="text-center mb-10">
@@ -78,7 +78,7 @@ const Highlights = () => {
                         <motion.div
                             key={index}
                             whileHover={{ scale: 1.05 }}
-                            className="w-[420px] h-[315px] flex-shrink-0 bg-gradient-to-br bg-cyan-500/20 via-[#1d4ed8] to-[#0b1f3a] hover:shadow-blue-500/30 text-black rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                            className="w-[420px] h-[315px] flex-shrink-0 bg-gradient-to-br bg-cyan-500/20 via-[#091f5b] to-[#0b1f3a] hover:shadow-blue-500/30 text-black rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                         >
                             {/* Top Section */}
                             <div>

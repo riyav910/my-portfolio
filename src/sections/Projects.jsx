@@ -8,7 +8,7 @@ const Projects = () => {
   const others = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="bg-[#0f172a] text-white py-20 px-6">
+    <section id="projects" className=" py-20 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}

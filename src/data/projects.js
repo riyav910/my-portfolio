@@ -3,7 +3,12 @@ export const projects = [
         title: "Intellicam",
         description:
             "Real-time object detection system with voice alerts for visually impaired users.",
-        tech: ["YOLO", "OpenCV", "Python"],
+        tech: ["Python",
+            "YOLOv8",
+            "OpenCV",
+            "PyQt5",
+            "pyttsx3",
+            "NumPy"],
         github: "https://github.com/riyav910/Intellicam",
         demo: "https://youtu.be/cPc5eGm-bYQ",
         featured: true,
@@ -29,12 +34,11 @@ export const projects = [
         "description": "Full-stack mental health platform with secure counseling, AI chatbot with risk triage, and real-time video sessions.",
         "tech": [
             "MERN",
-            "FastAPI",
             "Python",
+            "FastAPI",
             "Google Gemini",
             "RAG",
             "WebRTC (Jitsi)",
-            "Tailwind",
             "ChromaDB"
         ],
         "github": "",
@@ -45,12 +49,12 @@ export const projects = [
         "title": "AI Grader",
         "description": "Automated grading system using XGBoost to evaluate 100+ student submissions per day with a scalable backend and optimized storage pipeline.",
         "tech": [
+            "Python",
             "XGBoost",
             "Node.js",
             "Express",
             "MongoDB",
             "AWS S3",
-            "ImageKit"
         ],
         "github": "",
         "demo": "https://ai-grader-glkc.onrender.com/",
@@ -64,7 +68,8 @@ export const projects = [
             "Flask",
             "Gemini API",
             "Canvas API",
-            "CORS"
+            "JavaScript",
+            "HTML/CSS"
         ],
         "github": "https://github.com/riyav910/NeuraCanava",
         "demo": "https://riyav910.github.io/NeuraCanava/",

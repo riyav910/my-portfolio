@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
-  { path: "/", label: "Home" },
-  { path: "/skills", label: "Skills" },
-  { path: "/projects", label: "Projects" },
-  { path: "/contact", label: "Contact" },
-];
+    { path: "/", label: "Home" },
+    { path: "/skills", label: "Skills" },
+    { path: "/projects", label: "Projects" },
+    { path: "/contact", label: "Contact" },
+  ];
 
   const location = useLocation();
 
@@ -22,23 +22,53 @@ const Navbar = () => {
           Riya<span className="text-cyan-400">.</span>
         </h1>
 
-        {/* Nav Links */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex gap-8">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`cursor-pointer transition ${location.pathname === item.path
+              className={`cursor-pointer transition ${
+                location.pathname === item.path
                   ? "text-cyan-400"
                   : "text-gray-300 hover:text-white"
-                }`}
+              }`}
             >
               {item.label}
             </Link>
           ))}
         </div>
 
+        {/* Mobile Hamburger */}
+        <button
+          className="md:hidden text-gray-300 hover:text-white"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </button>
       </div>
+
+      {/* Mobile Dropdown */}
+      {menuOpen && (
+  <div className="md:hidden bg-[#0f172a] border-t border-gray-800">
+    <div className="flex flex-col py-2">
+      {navItems.map((item) => (
+        <Link
+          key={item.path}
+          to={item.path}
+          onClick={() => setMenuOpen(false)}
+          className={`w-full text-center py-3 text-lg transition ${
+            location.pathname === item.path
+              ? "text-cyan-400 bg-gray-800/40"
+              : "text-gray-300 hover:text-white hover:bg-gray-800/40"
+          }`}
+        >
+          {item.label}
+        </Link>
+      ))}
+    </div>
+  </div>
+)}
     </nav>
   );
 };

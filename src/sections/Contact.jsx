@@ -50,7 +50,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-[100dvh] bg-[#0f172a] text-white px-6 py-20 flex items-center justify-center">
+    <section className="min-h-[100dvh]   px-6 py-20 flex items-center justify-center">
       <div className="max-w-5xl w-full">
 
         {/* Heading */}
