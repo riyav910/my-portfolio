@@ -6,32 +6,42 @@ const Hero = () => {
   const eyesRef = useRef([]);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      eyesRef.current.forEach((eye) => {
-        if (!eye) return;
+  const moveEyes = (clientX, clientY) => {
+    eyesRef.current.forEach((eye) => {
+      if (!eye) return;
 
-        const rect = eye.getBoundingClientRect();
-        const eyeX = rect.left + rect.width / 2;
-        const eyeY = rect.top + rect.height / 2;
+      const rect = eye.getBoundingClientRect();
+      const eyeX = rect.left + rect.width / 2;
+      const eyeY = rect.top + rect.height / 2;
 
-        const angle = Math.atan2(
-          e.clientY - eyeY,
-          e.clientX - eyeX
-        );
+      const angle = Math.atan2(clientY - eyeY, clientX - eyeX);
+      const radius = 18;
 
-        const radius = 18;
+      const x = Math.cos(angle) * radius;
+      const y = Math.sin(angle) * radius;
 
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
+      const pupil = eye.querySelector(".pupil");
+      pupil.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  };
 
-        const pupil = eye.querySelector(".pupil");
-        pupil.style.transform = `translate(${x}px, ${y}px)`;
-      });
-    };
+  const handleMouseMove = (e) => {
+    moveEyes(e.clientX, e.clientY);
+  };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  const handleTouchMove = (e) => {
+    const touch = e.touches[0];
+    moveEyes(touch.clientX, touch.clientY);
+  };
+
+  window.addEventListener("mousemove", handleMouseMove);
+  window.addEventListener("touchmove", handleTouchMove);
+
+  return () => {
+    window.removeEventListener("mousemove", handleMouseMove);
+    window.removeEventListener("touchmove", handleTouchMove);
+  };
+}, []);
 
   return (
     <section
